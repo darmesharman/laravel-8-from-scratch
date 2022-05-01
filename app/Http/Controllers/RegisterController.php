@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
+use function Symfony\Component\String\s;
 
 class RegisterController extends Controller
 {
@@ -24,6 +25,6 @@ class RegisterController extends Controller
 
         User::create($attributes);
 
-        return redirect('/');
+        return redirect('/')->with('success', 'Your account has been created.');
     }
 }
